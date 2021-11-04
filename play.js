@@ -1,10 +1,9 @@
 const {connect} = require('./client');
-
-console.log("Connecting ...");
 const conn = connect();
-//console.log(conn);
-
-conn.on("data", (data) => {
+const handleEvents = () => {
   // code that does something
-  console.log(data.toString());
-});
+  //console.log("Successfully connected to game server");
+  conn.write("Name: GKP");
+};
+
+conn.on("connect", handleEvents);
