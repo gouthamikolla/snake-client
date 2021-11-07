@@ -50,6 +50,6 @@ const handleEvents = () => {
 // setup interface to handle user input from stdin
 
 
-setupInput();
+setupInput(conn);
 conn.on("connect", handleEvents);
 
